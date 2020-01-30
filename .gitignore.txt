@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.pyc
 *~
 __pycache__
@@ -5,3 +6,12 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
+=======
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+
+.DS_Store
+>>>>>>> 3ac1cdd0de9c9dbe19e226a6d531b236990307cf
