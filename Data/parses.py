@@ -15,29 +15,30 @@ import pygsheets
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 
-
-options = webdriver.ChromeOptions()
-options.add_argument("user-data-dir=C:\\newsite\\CraftDay\\supervisorparse\\User Data\\")
-driver = webdriver.Chrome(executable_path=r'C:/newsite/CraftDay/supervisorparse/chromedriver.exe', chrome_options=options)
-
-
-try:
-    driver.get("https://supervisor.pallas-ludens.com/")
-    username = driver.find_element_by_id("username")
-    username.send_keys("MDY_mykola_ustymenko")
-    password1 = driver.find_element_by_id("password")
-    password1.send_keys("Unf0684px2!")
-    butlog = driver.find_element_by_id("kc-login")
-    butlog.click()
-except Exception:
-    print("ok")
+def parsedata():
+    options = webdriver.ChromeOptions()
+    options.add_argument("user-data-dir=C:\\newsite\\CraftDay\\supervisorparse\\User Data\\")
+    driver = webdriver.Chrome(executable_path=r'C:/newsite/CraftDay/supervisorparse/chromedriver.exe', chrome_options=options)
 
 
-driver.get("https://docs.google.com/spreadsheets/d/1Ws84at7ztvpZtifs1xVXxK4Lr_bYHH_szhSkdNbiLoo/edit#gid=0")
+    try:
+        driver.get("https://supervisor.pallas-ludens.com/")
+        username = driver.find_element_by_id("username")
+        username.send_keys("MDY_mykola_ustymenko")
+        password1 = driver.find_element_by_id("password")
+        password1.send_keys("Unf0684px2!")
+        butlog = driver.find_element_by_id("kc-login")
+        butlog.click()
+    except Exception:
+        print("ok")
 
-time.sleep(4)
 
-sheet = driver.find_element_by_class_name("fixed4-inner-container")
-sheet.click()
+    driver.get("https://docs.google.com/spreadsheets/d/1Ws84at7ztvpZtifs1xVXxK4Lr_bYHH_szhSkdNbiLoo/edit#gid=0")
 
-ActionChains(driver).key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform()
+    time.sleep(4)
+
+    sheet = driver.find_element_by_class_name("fixed4-inner-container")
+    sheet.click()
+
+    ActionChains(driver).key_down(Keys.CONTROL).send_keys('v').key_up(Keys.CONTROL).perform()
+    return print("ready")

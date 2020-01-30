@@ -11,3 +11,10 @@
 .col-5 p {
     font-weight: bold;
 }
+
+html {
+    background-color: #F5F5F5;
+}
+#inputdata{
+    background-color: #F5F5F5;
+}
