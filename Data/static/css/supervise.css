@@ -1,0 +1,13 @@
+#inputdata{
+    width: 100%;
+}
+.buttons {
+    
+    display: flex;
+}
+.btn, .btn-dark {
+    box-shadow: none;
+}
+.col-5 p {
+    font-weight: bold;
+}

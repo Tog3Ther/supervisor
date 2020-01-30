@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="{% static 'css/supervise.css' %}">
+    <script src="{% static 'js/supervise.js' %}"></script>   
+    <link rel="shortcut icon" type="image/ico" href="{% static 'favicon.ico' %}"/>
+    <title>Supervisor UI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+<script>
+$(function() {
+  $('input[name="datetimes"]').daterangepicker({
+    timePicker: true,
+    timePicker24Hour: true,
+    linkedCalendars: false,
+    startDate: moment().startOf('hour'),
+    endDate: moment().startOf('hour').add(32, 'hour'),
+    timePicker24Hour: true,
+    locale: {
+      format: 'YYYY/MM/DD hh:mm A'
+    }
+  });
+}
+);
+</script>
+
+
+
+</body>
+</html>
+
